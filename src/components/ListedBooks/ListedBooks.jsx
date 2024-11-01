@@ -11,7 +11,7 @@ const ListedBooks = () => {
     return (
         <div className="my-14">
             <Tabs>
-                <TabList>
+                <TabList className={' max-w-64 mx-auto'}>
                     <Tab>Listed Books</Tab>
                     <Tab>Wished Books</Tab>
                 </TabList>

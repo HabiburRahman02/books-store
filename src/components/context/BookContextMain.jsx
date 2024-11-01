@@ -1,11 +1,19 @@
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const BookContext = createContext(null);
 const BookContextMain = ({ children }) => {
     const [markBooks, setMarkBooks] = useState([]);
     const handleMarkAsRead = book => {
-        setMarkBooks([...markBooks, book])
-        // console.log(markBooks);
+        const isExist = markBooks.find(markBook => markBook.bookId === book.bookId)
+        if (isExist) {
+            return toast.error("Already added")
+        }
+        else {
+            setMarkBooks([...markBooks, book])
+            toast.success("Read list added this book")
+        }
+
     }
     const info = {
         handleMarkAsRead,
