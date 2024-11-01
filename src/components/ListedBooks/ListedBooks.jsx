@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { BookContext } from "../context/BookContextMain";
 import MarkBook from "../MarkBook/MarkBook";
 
@@ -7,9 +7,24 @@ import 'react-tabs/style/react-tabs.css';
 
 const ListedBooks = () => {
     const { markBooks } = useContext(BookContext);
-    console.log(markBooks);
+    const [sort, setSort] = useState('');
+
+    const handleSort = type => {
+        setSort(type)
+    }
+
+
     return (
         <div className="my-14">
+            <div className="dropdown dropdown-bottom">
+                <div tabIndex={0} role="button" className="btn m-1 btn-accent text-white">{
+                    sort ? sort : 'Sort By'
+                }</div>
+                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    <li onClick={() => handleSort('Sort-by-page')}><a>Sort by pages number</a></li>
+                    <li onClick={() => handleSort('Sort-by-year')}><a>Sort by year</a></li>
+                </ul>
+            </div>
             <Tabs>
                 <TabList className={' max-w-64 mx-auto'}>
                     <Tab>Listed Books</Tab>

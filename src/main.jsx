@@ -13,6 +13,7 @@ import Home from './components/Home/Home';
 import BookDetails from './components/BookDetails/BookDetails';
 import BookContextMain from './components/context/BookContextMain';
 import ListedBooks from './components/ListedBooks/ListedBooks';
+import Dashboard from './components/Dashboard/Dashboard';
 
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/listedBooks',
         element: <ListedBooks></ListedBooks>
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>
       }
     ]
   },

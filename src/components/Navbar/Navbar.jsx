@@ -4,7 +4,7 @@ const Navbar = () => {
     const links = <>
         <li><NavLink className={({ isActive }) => isActive ? 'text-red-600' : ''} to='/'>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'text-red-600' : ''} to='/listedBooks'>Listed Books</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? 'text-red-600' : ''} to='/pageToRead'>Page To Read</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'text-red-600' : ''} to='/dashboard'>Dashboard</NavLink></li>
     </>
     return (
         <div className="bg-base-200">
