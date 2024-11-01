@@ -1,6 +1,6 @@
 
 const MarkBook = ({ markBook }) => {
-    const { bookId, bookName, author, image, tags } = markBook
+    const { bookId, bookName, author, image, tags, yearOfPublishing, totalPages } = markBook
     return (
         <div className="card bg-base-100 shadow-xl h-full hover:shadow-2xl">
             <figure className="bg-gray-100">
@@ -23,6 +23,8 @@ const MarkBook = ({ markBook }) => {
                 <div className="border  border-dashed my-4  "></div>
                 <div className="card-actions justify-between ">
                     <div className="badge badge-outline">Fiction</div>
+                    <div>Pages: {totalPages}</div>
+                    <div>Published: {yearOfPublishing}</div>
                     <div className="rating">
                         <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
                         <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" defaultChecked />

@@ -6,11 +6,19 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 const ListedBooks = () => {
-    const { markBooks } = useContext(BookContext);
+    const { markBooks, setMarkBooks } = useContext(BookContext);
     const [sort, setSort] = useState('');
 
     const handleSort = type => {
         setSort(type)
+        if (type === 'Sort-by-pages') {
+            const sortedByPages = [...markBooks].sort((a, b) => a.totalPages - b.totalPages);
+            setMarkBooks(sortedByPages)
+        }
+        else if (type === 'Sort-by-year') {
+            const sortedByYear = [...markBooks].sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            setMarkBooks(sortedByYear);
+        }
     }
 
 
@@ -21,7 +29,7 @@ const ListedBooks = () => {
                     sort ? sort : 'Sort By'
                 }</div>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                    <li onClick={() => handleSort('Sort-by-page')}><a>Sort by pages number</a></li>
+                    <li onClick={() => handleSort('Sort-by-pages')}><a>Sort by pages number</a></li>
                     <li onClick={() => handleSort('Sort-by-year')}><a>Sort by year</a></li>
                 </ul>
             </div>

@@ -17,6 +17,7 @@ const BookContextMain = ({ children }) => {
     }
     const info = {
         handleMarkAsRead,
+        setMarkBooks,
         markBooks
     }
     return (
