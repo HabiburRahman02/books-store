@@ -9,6 +9,10 @@ import {
 import Main from './layout/Main/Main';
 import Home from './components/Home/Home';
 import BookDetails from './components/BookDetails/BookDetails';
+import BookContextMain from './components/context/BookContextMain';
+import ListedBooks from './components/ListedBooks/ListedBooks';
+
+
 
 const router = createBrowserRouter([
   {
@@ -23,11 +27,11 @@ const router = createBrowserRouter([
       {
         path: '/book/:bookId',
         element: <BookDetails></BookDetails>,
-        loader: () => fetch(`booksData.json`)
+        loader: () => fetch(`/booksData.json`)
       },
       {
         path: '/listedBooks',
-        element: <div>Listed Books</div>
+        element: <ListedBooks></ListedBooks>
       }
     ]
   },
@@ -35,6 +39,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <BookContextMain>
+      <RouterProvider router={router} />
+    </BookContextMain>
   </StrictMode>,
 )

@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { BookContext } from "../context/BookContextMain";
 
 const BookDetails = () => {
     const { bookId } = useParams();
@@ -6,6 +8,8 @@ const BookDetails = () => {
 
     const newBook = books.find(book => book.bookId === parseInt(bookId))
     const { bookId: currentBookId, bookName, totalPages, publisher, yearOfPublishing, rating, author, image, tags, review } = newBook;
+
+    const { handleMarkAsRead } = useContext(BookContext);
 
     return (
         <div className="hero my-14">
@@ -17,7 +21,7 @@ const BookDetails = () => {
                 </div>
                 <div className="md:w-1/2 space-y-4">
                     <h1 className="text-5xl font-bold">{bookName}</h1>
-                    <p>Author: {author}</p>
+                    <p className="font-semibold text-lg text-gray-400">Author: {author}</p>
                     <div className="border"></div>
                     <p className="text-gray-600 text-lg">Fiction</p>
                     <div className="border"></div>
@@ -29,34 +33,18 @@ const BookDetails = () => {
                         }
                     </div>
                     <div className="border"></div>
-                    {/* <div className="flex gap-12">
-                        <span className="text-gray-500 font-bold">Number of Pages:</span>
-                        <span className="font-bold"> {totalPages}</span>
-                    </div>
-                    <div className="flex gap-12">
-                        <span className="text-gray-500 font-bold">Publisher:</span>
-                        <span className="font-bold"> {publisher}</span>
-                    </div>
-                    <div className="flex gap-12">
-                        <span className="text-gray-500 font-bold">Year of Publishing:</span>
-                        <span className="font-bold"> {yearOfPublishing}</span>
-                    </div>
-                    <div className="flex gap-12">
-                        <span className="text-gray-500 font-bold">Rating:</span>
-                        <span className="font-bold"> {rating}</span>
-                    </div> */}
                     <div className="overflow-x-auto">
-                        <table className="table">
+                        <table className="table ml-0">
                             <tbody>
-                                <tr>
+                                <tr className="border-none">
                                     <td className="text-gray-400 font-bold">Total pages Number</td>
                                     <td className="font-bold">{totalPages}</td>
                                 </tr>
-                                <tr>
+                                <tr className="border-none">
                                     <td className="text-gray-400 font-bold">Publisher:</td>
                                     <td className="font-bold">{publisher}</td>
                                 </tr>
-                                <tr>
+                                <tr className="border-none">
                                     <td className="text-gray-400 font-bold">Years of Publishing:</td>
                                     <td className="font-bold">{yearOfPublishing}</td>
                                 </tr>
@@ -67,7 +55,12 @@ const BookDetails = () => {
                             </tbody>
                         </table>
                     </div>
-                    {/* <button className="btn btn-primary">Get Started</button> */}
+                    <div className="flex gap-6">
+                        <button
+                            onClick={() => handleMarkAsRead(newBook)}
+                            className="btn btn-accent btn-outline">Read As Read</button>
+                        <button className="btn btn-accent text-white ">Wish List</button>
+                    </div>
                 </div>
             </div>
         </div>
