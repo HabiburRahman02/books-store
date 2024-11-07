@@ -14,6 +14,7 @@ import BookDetails from './components/BookDetails/BookDetails';
 import BookContextMain from './components/context/BookContextMain';
 import ListedBooks from './components/ListedBooks/ListedBooks';
 import Dashboard from './components/Dashboard/Dashboard';
+import CounterApp from './components/CounterApp';
 
 
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard></Dashboard>
+      },
+      {
+        path: 'loca',
+        element: <CounterApp></CounterApp>
       }
     ]
   },

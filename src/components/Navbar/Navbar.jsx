@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { BookContext } from "../context/BookContextMain";
 
 const Navbar = () => {
+    const { markBooks, quantity, totalPrice } = useContext(BookContext);
     const links = <>
         <li><NavLink className={({ isActive }) => isActive ? 'text-red-600' : ''} to='/'>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'text-red-600' : ''} to='/listedBooks'>Listed Books</NavLink></li>
@@ -39,7 +42,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {/* <a className="btn">Cart: {markBooks.length}</a> */}
+                    <a className="btn">Quantity: {quantity}</a>
+                    <a className="btn">totalPrice: {totalPrice}</a>
                 </div>
             </div>
         </div>

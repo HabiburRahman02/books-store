@@ -1,15 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { BookContext } from "../context/BookContextMain";
 
 const BookDetails = () => {
     const { bookId } = useParams();
     const books = useLoaderData();
-
     const newBook = books.find(book => book.bookId === parseInt(bookId))
-    const { bookId: currentBookId, bookName, totalPages, publisher, yearOfPublishing, rating, author, image, tags, review } = newBook;
+    const { bookId: currentBookId, bookName, price, totalPages, publisher, yearOfPublishing, rating, author, image, tags, review } = newBook;
 
-    const { handleMarkAsRead } = useContext(BookContext);
+    const { handleMarkAsRead, handleIncrease } = useContext(BookContext);
+    console.log(newBook);
+
 
     return (
         <div className="hero my-14">
@@ -24,8 +25,9 @@ const BookDetails = () => {
                     <p className="font-semibold text-lg text-gray-400">Author: {author}</p>
                     <div className="border"></div>
                     <p className="text-gray-600 text-lg">Fiction</p>
+                    <p className="text-gray-600 text-lg"> ${price}</p>
                     <div className="border"></div>
-                    <p><span className="font-bold">Review:</span> {review}</p>
+                    {/* <p><span className="font-bold">Review:</span> {review}</p> */}
                     <div className="flex gap-6">
                         <span className="font-bold">Tag</span>
                         {
@@ -54,6 +56,16 @@ const BookDetails = () => {
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    {/* <span>Quantity:{quantity}</span>
+                    <span>Total Price:{totalPrice}</span> */}
+                    <div className="flex gap-6">
+                        <button
+                            onClick={() => handleIncrease(newBook)}
+                            className="btn btn-accent text-white">Increase +</button>
+                        <button
+                            onClick={() => handleDecrease(newBook)}
+                            className="btn btn-secondary ">Decrease -</button>
                     </div>
                     <div className="flex gap-6">
                         <button

@@ -10,7 +10,8 @@
     "category": "Classic",
     "tags": ["Fiction", "Romance"],
     "publisher": "Scribner",
-    "yearOfPublishing": 1925
+    "yearOfPublishing": 1925,
+    "price": 10.99
   },
   {
     "bookId": 2,
@@ -23,7 +24,8 @@
     "category": "Fiction",
     "tags": ["Drama", "Social Justice"],
     "publisher": "J.B. Lippincott & Co.",
-    "yearOfPublishing": 1960
+    "yearOfPublishing": 1960,
+    "price": 12.49
   },
   {
     "bookId": 3,
@@ -36,7 +38,8 @@
     "category": "Fiction",
     "tags": ["Dystopian", "Political"],
     "publisher": "Secker & Warburg",
-    "yearOfPublishing": 1949
+    "yearOfPublishing": 1949,
+    "price": 15.00
   },
   {
     "bookId": 4,
@@ -49,7 +52,8 @@
     "category": "Fiction",
     "tags": ["Young Adult", "Identity"],
     "publisher": "Little, Brown and Company",
-    "yearOfPublishing": 1951
+    "yearOfPublishing": 1951,
+    "price": 9.99
   },
   {
     "bookId": 5,
@@ -62,7 +66,8 @@
     "category": "Classic",
     "tags": ["Romance", "Satire"],
     "publisher": "T. Egerton, Whitehall",
-    "yearOfPublishing": 1813
+    "yearOfPublishing": 1813,
+    "price": 7.99
   },
   {
     "bookId": 6,
@@ -75,7 +80,8 @@
     "category": "Fantasy",
     "tags": ["Adventure", "Epic"],
     "publisher": "Allen & Unwin",
-    "yearOfPublishing": 1937
+    "yearOfPublishing": 1937,
+    "price": 13.50
   },
   {
     "bookId": 7,
@@ -88,32 +94,7 @@
     "category": "Fantasy",
     "tags": ["Magic", "Young Adult"],
     "publisher": "Bloomsbury",
-    "yearOfPublishing": 1997
-  },
-  {
-    "bookId": 8,
-    "bookName": "The Alchemist",
-    "author": "Paulo Coelho",
-    "image": "https://i.ibb.co.com/zS9jsdK/18144590.jpg",
-    "review": "'The Great Gatsby' by F. Scott Fitzgerald is a timeless masterpiece that delves into the decadence and disillusionment of the Jazz Age. Set in the Roaring Twenties, the novel unveils the enigmatic Jay Gatsby's extravagant parties, masking a pursuit of lost love. Narrated by Nick Carraway, the story explores themes of wealth, love, and the American Dream, drawing readers into a vivid portrayal of the glittering yet elusive world of the East and West Egg. Fitzgerald's prose is both poetic and haunting, weaving a compelling narrative that transcends its era. A poignant exploration of societal excess and the human condition, 'The Great Gatsby' remains a literary gem that resonates across generations.",
-    "totalPages": 177,
-    "rating": 4.6,
-    "category": "Fiction",
-    "tags": ["Philosophical", "Adventure"],
-    "publisher": "HarperCollins",
-    "yearOfPublishing": 1988
-  },
-  {
-    "bookId": 9,
-    "bookName": "The Girl on the Train",
-    "author": "Paula Hawkins",
-    "image": "https://i.ibb.co.com/P6hfCmJ/Whats-App-Image-2024-05-22-at-11-21-25-2e21ae46.jpg",
-    "review": "'The Great Gatsby' by F. Scott Fitzgerald is a timeless masterpiece that delves into the decadence and disillusionment of the Jazz Age. Set in the Roaring Twenties, the novel unveils the enigmatic Jay Gatsby's extravagant parties, masking a pursuit of lost love. Narrated by Nick Carraway, the story explores themes of wealth, love, and the American Dream, drawing readers into a vivid portrayal of the glittering yet elusive world of the East and West Egg. Fitzgerald's prose is both poetic and haunting, weaving a compelling narrative that transcends its era. A poignant exploration of societal excess and the human condition, 'The Great Gatsby' remains a literary gem that resonates across generations.",
-    "totalPages": 316,
-    "rating": 4.2,
-    "category": "Mystery",
-    "tags": ["Suspense", "Psychological"],
-    "publisher": "Riverhead Books",
-    "yearOfPublishing": 2015
+    "yearOfPublishing": 1997,
+    "price": 14.99
   }
 ]
